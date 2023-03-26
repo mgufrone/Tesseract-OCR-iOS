@@ -23,9 +23,9 @@ Pod::Spec.new do |s|
   s.frameworks              = 'UIKit', 'Foundation'
 
   s.ios.deployment_target   = "7.0"
-  s.ios.vendored_library    = 'TesseractOCR/lib/*.a'
-  s.xcconfig                = { 'OTHER_LDFLAGS[sdk=iphoneos*]' => '-lz -ljpeg-ios -llept-ios -lpng16-ios -ltesseract-ios -ltiff-ios',
-                                'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '-lz -ljpeg-sim -llept-sim -lpng16-sim -ltesseract-sim -ltiff-sim',
+  s.ios.vendored_library    = 'TesseractOCR/lib/*-sim.a'
+  s.xcconfig                = { 'OTHER_LDFLAGS[sdk=iphoneos*]' => '$(inherited) -ljpeg-ios -llept-ios -lpng16-ios -ltesseract-ios -ltiff-ios',
+                                'OTHER_LDFLAGS[sdk=iphonesimulator*]' => '$(inherited) -ljpeg-sim -llept-sim -lpng16-sim -ltesseract-sim -ltiff-sim',
                                 'CLANG_CXX_LIBRARY' => 'compiler-default' }
 
 end
